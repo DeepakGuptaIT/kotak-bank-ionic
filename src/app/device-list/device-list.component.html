@@ -1,0 +1,11 @@
+<ion-item *ngIf="device" [routerLink]="'/device-details/' + device.id" [detail]="false">
+  <div slot="start"></div>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      {{ device.productName }}
+    </h2>
+    <p>
+      {{device.description}}
+    </p>
+  </ion-label>
+</ion-item>

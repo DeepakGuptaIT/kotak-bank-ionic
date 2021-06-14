@@ -35,3 +35,7 @@ Upload the Source Code in Git (https://github.com/)
 
 
  
+ # dev
+ git remote add origin https://github.com/DeepakGuptaIT/firealgo.git 
+ git remote add origin https://github.com/DeepakGuptaIT/firealgo.git 
+ git remote add origin https://github.com/DeepakGuptaIT/kotak-bank-ionic.git

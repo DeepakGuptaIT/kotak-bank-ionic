@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>device-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid *ngIf="device">
+    <ion-row>
+      <h1>
+        {{ device.productName }}
+      </h1>
+    </ion-row>
+    <ion-row>
+      <div class="about-header">
+        <img [src]="device.image" [alt]="device.image">
+      </div>
+      <p>
+        {{device.description}}
+      </p>
+    </ion-row>
+    <ion-row class="ion-margin">
+      <iframe width="620" height="445" src="https://www.youtube.com/embed/esxKj-CY8vk">
+      </iframe>
+    </ion-row>
+    <ion-item>
+      <b>CPU:</b>
+      <p>&nbsp;{{device.cpu}}</p>
+    </ion-item>
+    <ion-item>
+      <b>RAM:</b>
+      <p>&nbsp;{{device.ram}}</p>
+    </ion-item>
+    <ion-item>
+      <b>Storage:</b>
+      <p>&nbsp;{{device.storage}}</p>
+    </ion-item>
+    <ion-item>
+      <b>screen:</b>
+      <p>&nbsp;{{device.screen}}</p>
+    </ion-item>
+    <ion-item>
+      <b>price:</b>
+      <p>&nbsp;{{device.price}}</p>
+    </ion-item>
+  </ion-grid>
+
+</ion-content>
