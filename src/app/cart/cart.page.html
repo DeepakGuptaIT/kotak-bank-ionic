@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header [hidden]="deviceList.length > 0">
+    Cart is Empty
+  </ion-list-header>
+  <ion-list #scheduleList [hidden]="deviceList === 0">
+    <ion-item *ngFor="let device of deviceList">
+      <div slot="start"></div>
+      <ion-label class="ion-text-wrap">
+        <h2>
+          {{ device.productName }}
+        </h2>
+        <p>
+          {{device.description}}
+        </p>
+      </ion-label>
+      <ion-button (click)="removeFromCart(device.id)">
+        <ion-icon slot="icon-only" name="remove-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

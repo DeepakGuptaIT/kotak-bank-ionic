@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DataService, Message } from '../services/data.service';
 import { DeviceService, Device } from '../services/device.service';
 import { AlertController, LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ export class HomePage {
     private data: DataService,
     private deviceService: DeviceService,
     private loadingController: LoadingController,
-    public alertController: AlertController) { }
+    public alertController: AlertController,
+    public router: Router,) { }
 
   refresh(ev) {
     setTimeout(() => {
@@ -49,6 +51,10 @@ export class HomePage {
       }
     );
 
+  }
+
+  gotoCart() {
+    this.router.navigateByUrl('/cart', { replaceUrl: true })
   }
 
 }

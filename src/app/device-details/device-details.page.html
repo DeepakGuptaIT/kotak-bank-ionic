@@ -3,6 +3,17 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleCart()">
+        <ion-icon *ngIf="!isAdded" slot="icon-only" name="bag-add-outline"></ion-icon>
+        <ion-icon *ngIf="isAdded" slot="icon-only" name="remove-circle-outline"></ion-icon>
+        <!-- <ion-label *ngIf="!isAdded">Add to Cart</ion-label> -->
+        <!-- <ion-label *ngIf="isAdded">Remove From Cart</ion-label> -->
+      </ion-button>
+      <ion-button (click)="gotoCart()">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>device-details</ion-title>
   </ion-toolbar>
 </ion-header>

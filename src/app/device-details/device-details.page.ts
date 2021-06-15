@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { Device, DeviceService } from '../services/device.service';
+import { UserDataService } from '../services/user-data.service';
 
 @Component({
   selector: 'app-device-details',
@@ -11,11 +12,16 @@ import { Device, DeviceService } from '../services/device.service';
 export class DeviceDetailsPage implements OnInit {
   public device: Device;
   loading: HTMLIonLoadingElement;
+  isAdded = false;
   constructor(
     private deviceService: DeviceService,
     private activatedRoute: ActivatedRoute,
     public alertController: AlertController,
     private loadingController: LoadingController,
+    private userProvider: UserDataService,
+    public router: Router,
+    private toastCtrl: ToastController,
+
   ) { }
 
   ngOnInit() {
@@ -25,6 +31,7 @@ export class DeviceDetailsPage implements OnInit {
     this.loading = await this.loadingController.create({
       message: 'Please wait...'
     });
+    this.isAdded = this.userProvider.hasAddedToCart(id);
     await this.loading.present();
     this.deviceService.getDeviceList().subscribe(
       async (deviceList: Device[]) => {
@@ -53,6 +60,29 @@ export class DeviceDetailsPage implements OnInit {
     // }).catch(err => {
     //   console.log(err);
     // });
+  }
+  async toggleCart() {
+    if (this.userProvider.hasAddedToCart(this.device.id)) {
+      this.userProvider.removeFromCart(this.device.id);
+      this.isAdded = false;
+      const toast = await this.toastCtrl.create({
+        message: `Item removed from cart`,
+        duration: 2000,
+      });
+      await toast.present();
+    } else {
+      this.userProvider.addToCart(this.device.id);
+      this.isAdded = true;
+      const toast = await this.toastCtrl.create({
+        message: `Item added to cart`,
+        duration: 2000,
+      });
+      await toast.present();
+
+    }
+  }
+  gotoCart() {
+    this.router.navigateByUrl('/cart', { replaceUrl: true })
   }
 
 }
