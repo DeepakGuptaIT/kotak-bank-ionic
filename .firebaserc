@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "schools-io-d0066",
+    "prod": "kotak-shoping-demo"
+  }
+}

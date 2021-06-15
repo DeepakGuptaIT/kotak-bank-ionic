@@ -4,13 +4,13 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button (click)="toggleCart()">
+      <ion-button (click)="toggleCart()" color="primary">
         <ion-icon *ngIf="!isAdded" slot="icon-only" name="bag-add-outline"></ion-icon>
         <ion-icon *ngIf="isAdded" slot="icon-only" name="remove-circle-outline"></ion-icon>
         <!-- <ion-label *ngIf="!isAdded">Add to Cart</ion-label> -->
         <!-- <ion-label *ngIf="isAdded">Remove From Cart</ion-label> -->
       </ion-button>
-      <ion-button (click)="gotoCart()">
+      <ion-button (click)="gotoCart()" color="primary">
         <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
       </ion-button>
     </ion-buttons>

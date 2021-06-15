@@ -1,5 +1,8 @@
 # Kotak bank - Ionic App
 
+Project Console: https://console.firebase.google.com/project/kotak-shoping-demo/overview
+Hosting URL: https://kotak-shoping-demo.web.app
+
 # Requirement
 Fetch list of product (json list) from https://mocki.io/v1/d46dc365-f752-46ee-b0cd-c136aec38e00.
 

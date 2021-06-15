@@ -11,7 +11,7 @@
   <ion-list-header [hidden]="deviceList.length > 0">
     Cart is Empty
   </ion-list-header>
-  <ion-list #scheduleList [hidden]="deviceList === 0">
+  <ion-list [hidden]="deviceList.length === 0">
     <ion-item *ngFor="let device of deviceList">
       <div slot="start"></div>
       <ion-label class="ion-text-wrap">
