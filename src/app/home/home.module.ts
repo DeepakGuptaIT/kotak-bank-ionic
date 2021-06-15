@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
-import { MessageComponentModule } from '../message/message.module';
 import { DeviceListComponentModule } from '../device-list/device-list.module';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { DeviceListComponentModule } from '../device-list/device-list.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    MessageComponentModule,
     DeviceListComponentModule,
     HomePageRoutingModule,
   ],

@@ -19,13 +19,12 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        Inbox
+        Shoping.com
       </ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-list>
     <app-device-list *ngFor="let device of deviceList" [device]="device"></app-device-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
   </ion-list>
 </ion-content>
