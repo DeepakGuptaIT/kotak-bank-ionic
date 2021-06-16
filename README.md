@@ -3,6 +3,9 @@
 Project Console: https://console.firebase.google.com/project/kotak-shoping-demo/overview
 Hosting URL: https://kotak-shoping-demo.web.app
 
+https://github.com/DeepakGuptaIT/kotak-bank-ionic
+
+
 # Requirement
 Fetch list of product (json list) from https://mocki.io/v1/d46dc365-f752-46ee-b0cd-c136aec38e00.
 
@@ -39,6 +42,7 @@ Upload the Source Code in Git (https://github.com/)
 
  
  # dev
- git remote add origin https://github.com/DeepakGuptaIT/firealgo.git 
- git remote add origin https://github.com/DeepakGuptaIT/firealgo.git 
  git remote add origin https://github.com/DeepakGuptaIT/kotak-bank-ionic.git
+
+
+

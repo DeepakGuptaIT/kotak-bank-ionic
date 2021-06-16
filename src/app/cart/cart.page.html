@@ -14,17 +14,27 @@
   <ion-list [hidden]="deviceList.length === 0">
     <ion-item *ngFor="let device of deviceList">
       <div slot="start"></div>
-      <ion-label class="ion-text-wrap">
+      <ion-label>
         <h2>
           {{ device.productName }}
         </h2>
-        <p>
-          {{device.description}}
-        </p>
       </ion-label>
-      <ion-button (click)="removeFromCart(device.id)">
+      <ion-label slot="end">
+        {{device.price}}
+      </ion-label>
+      <ion-button (click)="removeFromCart(device.id)" slot="end">
         <ion-icon slot="icon-only" name="remove-circle-outline"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
+  <ion-item color="primary" [hidden]="deviceList.length === 0">
+    <ion-label>
+      <h4> Total</h4>
+
+    </ion-label>
+    <ion-label>
+      <h4>{{getTotal()}}</h4>
+    </ion-label>
+
+  </ion-item>
 </ion-content>

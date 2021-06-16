@@ -37,15 +37,19 @@ export class CartPage implements OnInit {
   }
 
   filterList(deviceList: Device[]): Device[] {
-    if (this.userProvider.cartItemList.length === 0 || deviceList.length === 0) {
+    if (this.userProvider.getCartItemList().length === 0 || deviceList.length === 0) {
 
       return [];
     }
-    return deviceList.filter(e => this.userProvider.cartItemList.includes(e.id));
+    return deviceList.filter(e => this.userProvider.getCartItemList().includes(e.id));
   }
   removeFromCart(id: string) {
     this.userProvider.removeFromCart(id);
     this.deviceList = [...this.deviceList.filter(e => e.id !== id)];
+  }
+  getTotal() {
+    const total = this.deviceList.map(e => +(e.price.replaceAll(',', ''))).reduce((a, b) => a + b, 0);
+    return total;
   }
 
 
