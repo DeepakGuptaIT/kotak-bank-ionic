@@ -46,3 +46,8 @@ Upload the Source Code in Git (https://github.com/)
 
 
 
+app-release-unsigned.apk
+D:\devs\git-repo\school-io\schools-io-app\schools-app\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk
+
+
+D:\devs\git-repo\kotak-bank-ionic\kotak-bank-shoping-demo\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk

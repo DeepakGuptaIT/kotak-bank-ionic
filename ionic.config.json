@@ -1,5 +1,8 @@
 {
   "name": "kotak-bank",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }
